@@ -1,0 +1,23 @@
+#!/bin/ksh
+
+
+
+add() {
+      erl_call -n unpacker@scriptersserver.bredbandsbolaget.se -c unpacker -a "unpacker add_to_queue [\"$1\"]"
+}
+
+list() {
+       erl_call -n unpacker@scriptersserver.bredbandsbolaget.se -c unpacker -a "unpacker list []"
+}
+
+usage() {
+        echo "  Usage: unpack add torrent"
+        echo "         unpack list"
+        exit 1
+}
+
+case $1 in
+     list)       list ;;
+     add)        add $2 ;;
+     *)          usage ;;
+esac

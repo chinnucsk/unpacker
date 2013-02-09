@@ -1,0 +1,14 @@
+#!/bin/ksh
+
+# Env
+  SCRIPTDIR="`cd \`dirname $0\`; pwd`"
+  [ -z "$1" ] && NAME="unpacker" || NAME="unpacker"
+  COOKIE=unpacker
+  LOGFILE=/home/stefan/logs/$NAME.log
+
+### Code ###
+  screen -list | grep -q "$NAME" && exit
+
+  ERTS="$SCRIPTDIR/unpacker/bin/erl -boot $SCRIPTDIR/unpacker/bin/unpacker"
+  echo "logfile $LOGFILE" > ~/.screen.$NAME
+  screen -dmLS $NAME -c ~/.screen.$NAME $ERTS -name $NAME -setcookie $COOKIE

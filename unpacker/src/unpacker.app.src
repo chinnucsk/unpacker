@@ -1,0 +1,12 @@
+{application, unpacker,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { unpacker_app, []}},
+  {env, []}
+ ]}.
