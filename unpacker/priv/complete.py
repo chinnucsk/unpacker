@@ -13,8 +13,10 @@ import UnRAR2
 #import pynma
 
 DEFAULT_DIR = '/mnt/torrent'
-TV_DIR = '/data/tv'
-MOVIE_DIR = '/data/movie'
+#TV_DIR = '/data/tv'
+TV_DIR = '/glftpd/site/TvShows'
+#MOVIE_DIR = '/data/movie'
+MOVIE_DIR = '/glftpd/site/Movies'
 LOG_DIR = '/home/stefan/logs'
 FILE_PATTERNS = ('^(?!.*sample).*\.mkv$',
                  '^((?!\.part(?!0*1\.rar$)\d+\.rar$).)*\.(?:rar)$')
