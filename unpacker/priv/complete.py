@@ -136,7 +136,7 @@ class Episode:
 
     def getSeries(self):
         if 'year' in self.guess:
-            return '%s (%d)' % (self.guss['series'], self.guess['year'])
+            return '%s (%d)' % (self.guess['series'], self.guess['year'])
         else:
             return self.guess['series']
 
